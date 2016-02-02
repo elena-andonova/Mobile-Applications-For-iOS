@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CultureGuide.xcscheme</key>
+		<key>CultureGuideApp.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0402EBD81C613EB700AA3B67</key>
+		<key>040251D11C613FF1007CAF51</key>
 		<dict>
 			<key>primary</key>
 			<true/>

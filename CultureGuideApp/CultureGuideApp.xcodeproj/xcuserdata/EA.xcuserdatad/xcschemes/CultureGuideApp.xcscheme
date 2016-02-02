@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0402EBD81C613EB700AA3B67"
-               BuildableName = "CultureGuide.app"
-               BlueprintName = "CultureGuide"
-               ReferencedContainer = "container:CultureGuide.xcodeproj">
+               BlueprintIdentifier = "040251D11C613FF1007CAF51"
+               BuildableName = "CultureGuideApp.app"
+               BlueprintName = "CultureGuideApp"
+               ReferencedContainer = "container:CultureGuideApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0402EBD81C613EB700AA3B67"
-            BuildableName = "CultureGuide.app"
-            BlueprintName = "CultureGuide"
-            ReferencedContainer = "container:CultureGuide.xcodeproj">
+            BlueprintIdentifier = "040251D11C613FF1007CAF51"
+            BuildableName = "CultureGuideApp.app"
+            BlueprintName = "CultureGuideApp"
+            ReferencedContainer = "container:CultureGuideApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0402EBD81C613EB700AA3B67"
-            BuildableName = "CultureGuide.app"
-            BlueprintName = "CultureGuide"
-            ReferencedContainer = "container:CultureGuide.xcodeproj">
+            BlueprintIdentifier = "040251D11C613FF1007CAF51"
+            BuildableName = "CultureGuideApp.app"
+            BlueprintName = "CultureGuideApp"
+            ReferencedContainer = "container:CultureGuideApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0402EBD81C613EB700AA3B67"
-            BuildableName = "CultureGuide.app"
-            BlueprintName = "CultureGuide"
-            ReferencedContainer = "container:CultureGuide.xcodeproj">
+            BlueprintIdentifier = "040251D11C613FF1007CAF51"
+            BuildableName = "CultureGuideApp.app"
+            BlueprintName = "CultureGuideApp"
+            ReferencedContainer = "container:CultureGuideApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
