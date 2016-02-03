@@ -10,4 +10,14 @@
 
 @implementation Place
 
+-(instancetype)initWithName:(NSString *)name{
+    
+    if(self = [super init])
+    {
+        self.name = name;
+    }
+    
+    return self;
+}
+
 @end

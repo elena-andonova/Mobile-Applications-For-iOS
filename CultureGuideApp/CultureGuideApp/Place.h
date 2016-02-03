@@ -18,4 +18,7 @@
 
 @property (strong, nonatomic) NSArray *events;
 
+-(instancetype) initWithName: (NSString*) name;
+
+
 @end

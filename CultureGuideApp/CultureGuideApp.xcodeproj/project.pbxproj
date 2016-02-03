@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		040251D71C613FF1007CAF51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 040251D61C613FF1007CAF51 /* main.m */; };
 		040251DA1C613FF1007CAF51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 040251D91C613FF1007CAF51 /* AppDelegate.m */; };
-		040251DD1C613FF1007CAF51 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040251DC1C613FF1007CAF51 /* ViewController.m */; };
 		040251E01C613FF1007CAF51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040251DE1C613FF1007CAF51 /* Main.storyboard */; };
 		040251E21C613FF1007CAF51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040251E11C613FF1007CAF51 /* Assets.xcassets */; };
 		040251E51C613FF1007CAF51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040251E31C613FF1007CAF51 /* LaunchScreen.storyboard */; };
 		040251EF1C6141E4007CAF51 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 040251EE1C6141E4007CAF51 /* Event.m */; };
 		040251F21C614776007CAF51 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 040251F11C614776007CAF51 /* Place.m */; };
+		040251F61C628114007CAF51 /* PlaceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040251F51C628114007CAF51 /* PlaceTableViewController.m */; };
+		040251F91C628932007CAF51 /* PlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040251F81C628932007CAF51 /* PlaceCell.xib */; };
+		040251FC1C628ADB007CAF51 /* PlaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040251FB1C628ADB007CAF51 /* PlaceCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,8 +24,6 @@
 		040251D61C613FF1007CAF51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		040251D81C613FF1007CAF51 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		040251D91C613FF1007CAF51 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		040251DB1C613FF1007CAF51 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		040251DC1C613FF1007CAF51 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		040251DF1C613FF1007CAF51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		040251E11C613FF1007CAF51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		040251E41C613FF1007CAF51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,6 +32,11 @@
 		040251EE1C6141E4007CAF51 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		040251F01C614776007CAF51 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		040251F11C614776007CAF51 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
+		040251F41C628114007CAF51 /* PlaceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceTableViewController.h; sourceTree = "<group>"; };
+		040251F51C628114007CAF51 /* PlaceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceTableViewController.m; sourceTree = "<group>"; };
+		040251F81C628932007CAF51 /* PlaceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceCell.xib; sourceTree = "<group>"; };
+		040251FA1C628ADB007CAF51 /* PlaceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceCell.h; sourceTree = "<group>"; };
+		040251FB1C628ADB007CAF51 /* PlaceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,11 +69,11 @@
 		040251D41C613FF1007CAF51 /* CultureGuideApp */ = {
 			isa = PBXGroup;
 			children = (
+				040251F71C6288F0007CAF51 /* Views */,
+				040251F31C627AFB007CAF51 /* ViewControllers */,
 				040251EC1C6140F7007CAF51 /* Models */,
 				040251D81C613FF1007CAF51 /* AppDelegate.h */,
 				040251D91C613FF1007CAF51 /* AppDelegate.m */,
-				040251DB1C613FF1007CAF51 /* ViewController.h */,
-				040251DC1C613FF1007CAF51 /* ViewController.m */,
 				040251DE1C613FF1007CAF51 /* Main.storyboard */,
 				040251E11C613FF1007CAF51 /* Assets.xcassets */,
 				040251E31C613FF1007CAF51 /* LaunchScreen.storyboard */,
@@ -95,6 +100,25 @@
 				040251F11C614776007CAF51 /* Place.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		040251F31C627AFB007CAF51 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				040251F41C628114007CAF51 /* PlaceTableViewController.h */,
+				040251F51C628114007CAF51 /* PlaceTableViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		040251F71C6288F0007CAF51 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				040251F81C628932007CAF51 /* PlaceCell.xib */,
+				040251FA1C628ADB007CAF51 /* PlaceCell.h */,
+				040251FB1C628ADB007CAF51 /* PlaceCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +181,7 @@
 				040251E51C613FF1007CAF51 /* LaunchScreen.storyboard in Resources */,
 				040251E21C613FF1007CAF51 /* Assets.xcassets in Resources */,
 				040251E01C613FF1007CAF51 /* Main.storyboard in Resources */,
+				040251F91C628932007CAF51 /* PlaceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,7 +194,8 @@
 			files = (
 				040251F21C614776007CAF51 /* Place.m in Sources */,
 				040251EF1C6141E4007CAF51 /* Event.m in Sources */,
-				040251DD1C613FF1007CAF51 /* ViewController.m in Sources */,
+				040251F61C628114007CAF51 /* PlaceTableViewController.m in Sources */,
+				040251FC1C628ADB007CAF51 /* PlaceCell.m in Sources */,
 				040251DA1C613FF1007CAF51 /* AppDelegate.m in Sources */,
 				040251D71C613FF1007CAF51 /* main.m in Sources */,
 			);
