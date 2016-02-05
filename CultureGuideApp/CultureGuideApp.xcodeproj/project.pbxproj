@@ -14,9 +14,11 @@
 		040251E51C613FF1007CAF51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040251E31C613FF1007CAF51 /* LaunchScreen.storyboard */; };
 		040251EF1C6141E4007CAF51 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 040251EE1C6141E4007CAF51 /* Event.m */; };
 		040251F21C614776007CAF51 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 040251F11C614776007CAF51 /* Place.m */; };
-		040251F61C628114007CAF51 /* PlaceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040251F51C628114007CAF51 /* PlaceTableViewController.m */; };
-		040251F91C628932007CAF51 /* PlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040251F81C628932007CAF51 /* PlaceCell.xib */; };
-		040251FC1C628ADB007CAF51 /* PlaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040251FB1C628ADB007CAF51 /* PlaceCell.m */; };
+		040251F61C628114007CAF51 /* CultureCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040251F51C628114007CAF51 /* CultureCategoryTableViewController.m */; };
+		040251F91C628932007CAF51 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040251F81C628932007CAF51 /* CategoryCell.xib */; };
+		040251FC1C628ADB007CAF51 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040251FB1C628ADB007CAF51 /* CategoryCell.m */; };
+		04CBE0401C654A8D0031890D /* CultureCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE03F1C654A8D0031890D /* CultureCategory.m */; };
+		04CBE0431C655B490031890D /* PlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE0421C655B490031890D /* PlacesTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,11 +34,15 @@
 		040251EE1C6141E4007CAF51 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		040251F01C614776007CAF51 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		040251F11C614776007CAF51 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
-		040251F41C628114007CAF51 /* PlaceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceTableViewController.h; sourceTree = "<group>"; };
-		040251F51C628114007CAF51 /* PlaceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceTableViewController.m; sourceTree = "<group>"; };
-		040251F81C628932007CAF51 /* PlaceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceCell.xib; sourceTree = "<group>"; };
-		040251FA1C628ADB007CAF51 /* PlaceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceCell.h; sourceTree = "<group>"; };
-		040251FB1C628ADB007CAF51 /* PlaceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceCell.m; sourceTree = "<group>"; };
+		040251F41C628114007CAF51 /* CultureCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CultureCategoryTableViewController.h; sourceTree = "<group>"; };
+		040251F51C628114007CAF51 /* CultureCategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CultureCategoryTableViewController.m; sourceTree = "<group>"; };
+		040251F81C628932007CAF51 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		040251FA1C628ADB007CAF51 /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
+		040251FB1C628ADB007CAF51 /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
+		04CBE03E1C654A8D0031890D /* CultureCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CultureCategory.h; sourceTree = "<group>"; };
+		04CBE03F1C654A8D0031890D /* CultureCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CultureCategory.m; sourceTree = "<group>"; };
+		04CBE0411C655B490031890D /* PlacesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesTableViewController.h; sourceTree = "<group>"; };
+		04CBE0421C655B490031890D /* PlacesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,8 @@
 				040251EE1C6141E4007CAF51 /* Event.m */,
 				040251F01C614776007CAF51 /* Place.h */,
 				040251F11C614776007CAF51 /* Place.m */,
+				04CBE03E1C654A8D0031890D /* CultureCategory.h */,
+				04CBE03F1C654A8D0031890D /* CultureCategory.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -105,8 +113,10 @@
 		040251F31C627AFB007CAF51 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				040251F41C628114007CAF51 /* PlaceTableViewController.h */,
-				040251F51C628114007CAF51 /* PlaceTableViewController.m */,
+				040251F41C628114007CAF51 /* CultureCategoryTableViewController.h */,
+				040251F51C628114007CAF51 /* CultureCategoryTableViewController.m */,
+				04CBE0411C655B490031890D /* PlacesTableViewController.h */,
+				04CBE0421C655B490031890D /* PlacesTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -114,9 +124,9 @@
 		040251F71C6288F0007CAF51 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				040251F81C628932007CAF51 /* PlaceCell.xib */,
-				040251FA1C628ADB007CAF51 /* PlaceCell.h */,
-				040251FB1C628ADB007CAF51 /* PlaceCell.m */,
+				040251F81C628932007CAF51 /* CategoryCell.xib */,
+				040251FA1C628ADB007CAF51 /* CategoryCell.h */,
+				040251FB1C628ADB007CAF51 /* CategoryCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -181,7 +191,7 @@
 				040251E51C613FF1007CAF51 /* LaunchScreen.storyboard in Resources */,
 				040251E21C613FF1007CAF51 /* Assets.xcassets in Resources */,
 				040251E01C613FF1007CAF51 /* Main.storyboard in Resources */,
-				040251F91C628932007CAF51 /* PlaceCell.xib in Resources */,
+				040251F91C628932007CAF51 /* CategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,10 +202,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04CBE0401C654A8D0031890D /* CultureCategory.m in Sources */,
 				040251F21C614776007CAF51 /* Place.m in Sources */,
 				040251EF1C6141E4007CAF51 /* Event.m in Sources */,
-				040251F61C628114007CAF51 /* PlaceTableViewController.m in Sources */,
-				040251FC1C628ADB007CAF51 /* PlaceCell.m in Sources */,
+				040251F61C628114007CAF51 /* CultureCategoryTableViewController.m in Sources */,
+				040251FC1C628ADB007CAF51 /* CategoryCell.m in Sources */,
+				04CBE0431C655B490031890D /* PlacesTableViewController.m in Sources */,
 				040251DA1C613FF1007CAF51 /* AppDelegate.m in Sources */,
 				040251D71C613FF1007CAF51 /* main.m in Sources */,
 			);

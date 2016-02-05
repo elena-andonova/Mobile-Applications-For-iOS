@@ -6,8 +6,8 @@
 //  Copyright © 2016 EA. All rights reserved.
 //
 
-#import "PlaceCell.h"
+#import "CategoryCell.h"
 
-@implementation PlaceCell
+@implementation CategoryCell
 
 @end

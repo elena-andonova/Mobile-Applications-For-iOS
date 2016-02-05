@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="239" id="9nI-MS-Dqd" customClass="CategoryCell">
+            <rect key="frame" x="0.0" y="0.0" width="513" height="239"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9nI-MS-Dqd" id="9rA-UO-vKJ">
+                <rect key="frame" x="0.0" y="0.0" width="513" height="238"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3e-lM-dO7">
+                        <rect key="frame" x="144" y="178" width="224" height="52"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="52" id="Ozb-CN-DGu"/>
+                            <constraint firstAttribute="width" constant="224" id="bw6-B5-NLZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dFD-At-5X4">
+                        <rect key="frame" x="192" y="42" width="128" height="128"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="128" id="71Y-0J-tLz"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="c3e-lM-dO7" firstAttribute="top" secondItem="dFD-At-5X4" secondAttribute="bottom" constant="24" id="9ru-38-WfX"/>
+                    <constraint firstItem="dFD-At-5X4" firstAttribute="top" secondItem="9rA-UO-vKJ" secondAttribute="topMargin" constant="18" id="AGx-Zg-4gP"/>
+                    <constraint firstItem="c3e-lM-dO7" firstAttribute="centerX" secondItem="dFD-At-5X4" secondAttribute="centerX" id="CZz-h4-oMJ"/>
+                    <constraint firstItem="dFD-At-5X4" firstAttribute="centerX" secondItem="9rA-UO-vKJ" secondAttribute="centerX" id="IPS-Db-TcS"/>
+                    <constraint firstItem="c3e-lM-dO7" firstAttribute="bottom" secondItem="9rA-UO-vKJ" secondAttribute="bottomMargin" id="qOM-Ng-yNC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
+            <connections>
+                <outlet property="categoryImage" destination="dFD-At-5X4" id="7fc-Kw-wHr"/>
+                <outlet property="categoryLabel" destination="c3e-lM-dO7" id="W3s-AP-zkh"/>
+            </connections>
+            <point key="canvasLocation" x="367.5" y="481.5"/>
+        </tableViewCell>
+    </objects>
+</document>

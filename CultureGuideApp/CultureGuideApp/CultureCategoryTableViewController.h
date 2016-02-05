@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlaceTableViewController : UITableViewController
+@interface CultureCategoryTableViewController : UITableViewController
 
-@property (strong, nonatomic) NSArray* places;
+@property (strong, nonatomic) NSArray* cultureCategories;
 
 @end
