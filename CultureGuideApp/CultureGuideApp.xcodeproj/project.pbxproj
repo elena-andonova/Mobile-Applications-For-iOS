@@ -18,6 +18,7 @@
 		040251F91C628932007CAF51 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040251F81C628932007CAF51 /* CategoryCell.xib */; };
 		040251FC1C628ADB007CAF51 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040251FB1C628ADB007CAF51 /* CategoryCell.m */; };
 		04379EDA1C6645B300931A9D /* EverliveSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04379ED81C66450C00931A9D /* EverliveSDK.framework */; };
+		04379EE11C6672EB00931A9D /* EventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04379EE01C6672EB00931A9D /* EventsTableViewController.m */; };
 		04CBE0401C654A8D0031890D /* CultureCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE03F1C654A8D0031890D /* CultureCategory.m */; };
 		04CBE0431C655B490031890D /* PlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE0421C655B490031890D /* PlacesTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,8 @@
 		040251FA1C628ADB007CAF51 /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
 		040251FB1C628ADB007CAF51 /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
 		04379ED81C66450C00931A9D /* EverliveSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EverliveSDK.framework; sourceTree = "<group>"; };
+		04379EDF1C6672EB00931A9D /* EventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewController.h; sourceTree = "<group>"; };
+		04379EE01C6672EB00931A9D /* EventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewController.m; sourceTree = "<group>"; };
 		04CBE03E1C654A8D0031890D /* CultureCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CultureCategory.h; sourceTree = "<group>"; };
 		04CBE03F1C654A8D0031890D /* CultureCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CultureCategory.m; sourceTree = "<group>"; };
 		04CBE0411C655B490031890D /* PlacesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesTableViewController.h; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 		040251F31C627AFB007CAF51 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				04379EDF1C6672EB00931A9D /* EventsTableViewController.h */,
+				04379EE01C6672EB00931A9D /* EventsTableViewController.m */,
 				040251F41C628114007CAF51 /* CultureCategoryTableViewController.h */,
 				040251F51C628114007CAF51 /* CultureCategoryTableViewController.m */,
 				04CBE0411C655B490031890D /* PlacesTableViewController.h */,
@@ -213,6 +218,7 @@
 				040251FC1C628ADB007CAF51 /* CategoryCell.m in Sources */,
 				04CBE0431C655B490031890D /* PlacesTableViewController.m in Sources */,
 				040251DA1C613FF1007CAF51 /* AppDelegate.m in Sources */,
+				04379EE11C6672EB00931A9D /* EventsTableViewController.m in Sources */,
 				040251D71C613FF1007CAF51 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

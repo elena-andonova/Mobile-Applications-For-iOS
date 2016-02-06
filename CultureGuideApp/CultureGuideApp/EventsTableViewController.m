@@ -1,42 +1,46 @@
 //
-//  PlacesTableViewController.m
+//  EventsTableViewController.m
 //  CultureGuideApp
 //
 //  Created by Elena Andonova on 2/6/16.
 //  Copyright © 2016 EA. All rights reserved.
 //
 
-#import "PlacesTableViewController.h"
-#import "Place.h"
 #import "EventsTableViewController.h"
+#import "Event.h"
 
-@interface PlacesTableViewController ()
+@interface EventsTableViewController ()
 
 @end
 
-@implementation PlacesTableViewController
+@implementation EventsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loadPlaces];
+    [self loadEvents];
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
--(void)loadPlaces{
+-(void)loadEvents{
     EVDataStore *dataStore = [EVDataStore sharedInstance];
-    EVFetchRequest *request = [EVFetchRequest fetchRequestWithKindOfClass:[Place class]];
-
-    [request setPredicate:[NSPredicate predicateWithFormat:@"CultureCategoryId == %@",self.cultureCategoryId]];
+    EVFetchRequest *request = [EVFetchRequest fetchRequestWithKindOfClass:[Event class]];
+    
+    [request setPredicate:[NSPredicate predicateWithFormat:@"PlaceId == %@",self.placeId]];
     
     [dataStore executeFetchRequest:request block:^(NSArray *result, NSError *error) {
         //here result will contain the fetched Activities
-        NSMutableArray *places = [NSMutableArray array];
+        NSMutableArray *events = [NSMutableArray array];
         for (int index = 0; index < [result count]; index++)
         {
-            Place *place = [result objectAtIndex:index];
-            [places addObject:place];
-            NSLog(@"Place is: %@, id: %@", place.name, place.id);
+            Event *event = [result objectAtIndex:index];
+            [events addObject:event];
+            NSLog(@"Event is: %@, id: %@", event.name, event.id);
         }
-        self.places = places;
+        self.events = events;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -44,49 +48,41 @@
             
         });
         
-        NSLog(@"%lu", places.count);
+        NSLog(@"%lu", events.count);
     }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
     // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.places.count;
+
+    return self.events.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *cellIdentifier = @"placesCell";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    NSString *cellIdentifier = @"eventsCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
 
-    Place *place = [self.places objectAtIndex:indexPath.row];
+    Event *event = [self.events objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = place.name;
+    cell.textLabel.text = event.name;
     
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    Place *place = [self.places objectAtIndex:indexPath.row];
-    NSString *storyBoardID = @"eventsScene";
-    
-    EventsTableViewController *eventsVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardID];
-    
-    eventsVC.placeId = place.id;
-    
-    [self.navigationController pushViewController:eventsVC animated:YES];
-}
 
 /*
 // Override to support conditional editing of the table view.

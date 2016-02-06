@@ -6,9 +6,9 @@
 //  Copyright © 2016 EA. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <EverliveSDK/EverliveSDK.h>
 
-@interface Event : NSObject
+@interface Event : EVObject
 
 @property (strong, nonatomic) NSString *name;
 
@@ -16,12 +16,16 @@
 
 @property (strong,nonatomic) NSDate *date;
 
+@property (strong, nonatomic) NSString *hall;
+
 -(instancetype)initWithName: (NSString*) name
                        date: (NSDate*) date
+                       hall: (NSString*) hall
         andEventDescription: (NSString*) descr;
 
 +(instancetype)eventWithName: (NSString*) name
                         date: (NSDate*) date
+                        hall: (NSString*) hall
          andEventDescription: (NSString*) descr;
 
 @end
