@@ -8,8 +8,16 @@
 
 #import "EventsTableViewController.h"
 #import "Event.h"
+#import "EventDetailsViewController.h"
+#import "EventTicketViewController.h"
 
 @interface EventsTableViewController ()
+
+@property (strong, nonatomic) UITabBarController *myTabbarController;
+
+@property (strong, nonatomic) EventDetailsViewController *eventDetailsView;
+
+@property (strong, nonatomic) EventTicketViewController *eventTicketView;
 
 @end
 
@@ -18,6 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadEvents];
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -84,6 +95,22 @@
 }
 
 
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    
+//    NSLog(@"%lu", indexPath.row);
+//    
+//    Event *event = [self.events objectAtIndex:indexPath.row];
+//    
+//    //NSString *storyBoardID = @"eventDetailsScene";
+//    NSString *storyBoardID = @"eventBarScene";
+//    
+//    EventDetailsViewController *eventDetailsVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardID];
+//    
+//    eventDetailsVC.event = event;
+//
+//    [self.navigationController pushViewController:eventDetailsVC animated:YES];
+//}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -118,14 +145,26 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+    NSLog(@"%lu", selectedIndexPath.row);
+
+    Event *event = [self.events objectAtIndex: selectedIndexPath.row];
+    
+    self.myTabbarController = (UITabBarController*) [segue destinationViewController];
+    self.eventDetailsView = [self.myTabbarController.viewControllers objectAtIndex:0];
+    self.eventDetailsView.event = event;
+    
+    self.eventTicketView = [self.myTabbarController.viewControllers objectAtIndex:1];
+    self.eventTicketView.url = event.eventTicketsUrl;
+    self.eventTicketView.testText = @"Coming from events table view..";
+    
 }
-*/
+
 
 @end
