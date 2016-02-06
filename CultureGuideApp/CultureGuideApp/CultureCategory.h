@@ -6,9 +6,9 @@
 //  Copyright © 2016 EA. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <EverliveSDK/EverliveSDK.h>
 
-@interface CultureCategory : NSObject
+@interface CultureCategory : EVObject
 
 @property (strong, nonatomic) NSString *name;
 

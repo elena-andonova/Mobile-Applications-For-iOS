@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <EverliveSDK/EverliveSDK.h>
+#import "CultureCategory.h"
+#import "Place.h"
 
 @interface AppDelegate ()
 
@@ -14,11 +17,15 @@
 
 @implementation AppDelegate
 
+NSMutableArray *categories;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+   
+    [Everlive setApplicationId:@"x3wwm8ba0hobfymk"];
+    
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

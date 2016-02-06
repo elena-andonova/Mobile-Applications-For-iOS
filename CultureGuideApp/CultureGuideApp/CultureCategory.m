@@ -33,4 +33,8 @@
     return [[CultureCategory alloc] initWithName:name andImage:image];
 }
 
++(NSString *)description{
+    return @"CultureCategory";
+}
+
 @end

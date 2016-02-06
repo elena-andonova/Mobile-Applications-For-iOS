@@ -17,19 +17,38 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    self.cultureCategories = [NSArray arrayWithObjects:
-                              [CultureCategory cultureCategoryWithName:@"Theatre" andImage:@"theatre-128"],
-                              [CultureCategory cultureCategoryWithName:@"Concerts" andImage:@"concert-128"],nil];
-
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-    
-//AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-//    
-//    self.places = [delegate.data places];
-//    [self.tableView reloadData];
+    [self loadCategories];
+}
+
+-(void)loadCategories{
+    EVDataStore *dataStore = [EVDataStore sharedInstance];
+    [dataStore fetchAll:[CultureCategory class] block:^(NSArray *result, NSError *error) {
+        if (error != nil) {
+            NSLog(@"Unfortunately an error occurred: %@", error.domain);
+        } else {
+            
+            NSMutableArray *categories = [NSMutableArray array];
+            for (int index = 0; index < [result count]; index++)
+            {
+                CultureCategory *categ= [result objectAtIndex:index];
+                [categories addObject:categ];
+                NSLog(@"Category is: %@, id: %@", categ.name, categ.id);
+            }
+            self.cultureCategories = categories;
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [self.tableView reloadData];
+                
+            });
+            
+            NSLog(@"%lu", categories.count);
+        }
+    }];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -42,10 +61,6 @@
         //Loading custom cell
         originalCell = [[[NSBundle mainBundle] loadNibNamed:@"CategoryCell" owner:self options:nil] objectAtIndex:0];
     }
-    
-//    if (originalCell == nil) {
-//        originalCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-//    }
     
     CategoryCell *cell = (CategoryCell*)originalCell;
     CultureCategory *categ = [self.cultureCategories objectAtIndex:indexPath.row];
@@ -68,7 +83,7 @@
     
     PlacesTableViewController *placesVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardID];
     
-    placesVC.places = categ.places;
+    placesVC.cultureCategoryId = categ.id;
     
     [self.navigationController pushViewController:placesVC animated:YES];
 }

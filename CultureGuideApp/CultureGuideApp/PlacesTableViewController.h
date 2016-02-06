@@ -10,6 +10,8 @@
 
 @interface PlacesTableViewController : UITableViewController
 
+@property (strong, nonatomic) NSString *cultureCategoryId;
+
 @property (strong, nonatomic) NSArray *places;
 
 @end

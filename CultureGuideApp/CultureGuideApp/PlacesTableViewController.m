@@ -7,6 +7,7 @@
 //
 
 #import "PlacesTableViewController.h"
+#import "Place.h"
 
 @interface PlacesTableViewController ()
 
@@ -16,12 +17,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self loadPlaces];
+}
+
+-(void)loadPlaces{
+    EVDataStore *dataStore = [EVDataStore sharedInstance];
+    EVFetchRequest *request = [EVFetchRequest fetchRequestWithKindOfClass:[Place class]];
+
+    [request setPredicate:[NSPredicate predicateWithFormat:@"CultureCategoryId == %@",self.cultureCategoryId]];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [dataStore executeFetchRequest:request block:^(NSArray *result, NSError *error) {
+        //here result will contain the fetched Activities
+        NSMutableArray *places = [NSMutableArray array];
+        for (int index = 0; index < [result count]; index++)
+        {
+            Place *place = [result objectAtIndex:index];
+            [places addObject:place];
+            NSLog(@"Place is: %@, id: %@", place.name, place.id);
+        }
+        self.places = places;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self.tableView reloadData];
+            
+        });
+        
+        NSLog(@"%lu", places.count);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,7 +56,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.places.count;
 }
 
 
@@ -46,7 +69,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
 
-    cell.textLabel.text = @"place here";
+    Place *place = [self.places objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = place.name;
     
     return cell;
 }

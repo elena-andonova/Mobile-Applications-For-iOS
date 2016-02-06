@@ -6,9 +6,9 @@
 //  Copyright © 2016 EA. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <EverliveSDK/EverliveSDK.h>
 
-@interface Place : NSObject
+@interface Place : EVObject
 
 @property (strong, nonatomic) NSString *name;
 
