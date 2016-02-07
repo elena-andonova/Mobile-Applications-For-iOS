@@ -10,8 +10,8 @@
 
 @interface CategoryCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *categoryImageView;
 
-@property (weak, nonatomic) IBOutlet UIImageView *categoryImage;
+@property (weak, nonatomic) IBOutlet UILabel *categoryNameLabel;
 
 @end

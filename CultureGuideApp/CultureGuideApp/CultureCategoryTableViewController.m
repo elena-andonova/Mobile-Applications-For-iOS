@@ -8,10 +8,21 @@
 
 #import "CultureCategoryTableViewController.h"
 #import "PlacesTableViewController.h"
+#import "PlacesLocationViewController.h"
 #import "AppDelegate.h"
 #import "CultureCategory.h"
 #import "Place.h"
 #import "CategoryCell.h"
+
+@interface CultureCategoryTableViewController()
+
+@property (strong, nonatomic) UITabBarController *eventsTabBarController;
+
+@property (strong, nonatomic) PlacesTableViewController *placesTableView;
+
+@property (strong, nonatomic) PlacesLocationViewController *placesLocationView;
+
+@end
 
 @implementation CultureCategoryTableViewController
 
@@ -55,20 +66,24 @@
     
     static NSString *cellIdentifier = @"categoryCell";
     
-    UITableViewCell *originalCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+//    UITableViewCell *originalCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+//    
+//    if (![originalCell isKindOfClass:[CategoryCell class]] || originalCell == nil) {
+//        //Loading custom cell
+//        originalCell = [[[NSBundle mainBundle] loadNibNamed:@"CategoryCell" owner:self options:nil] objectAtIndex:0];
+//    }
+//  CategoryCell *cell = (CategoryCell*)originalCell;
     
-    if (![originalCell isKindOfClass:[CategoryCell class]] || originalCell == nil) {
-        //Loading custom cell
-        originalCell = [[[NSBundle mainBundle] loadNibNamed:@"CategoryCell" owner:self options:nil] objectAtIndex:0];
-    }
+    CategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    CategoryCell *cell = (CategoryCell*)originalCell;
+    
+    
     CultureCategory *categ = [self.cultureCategories objectAtIndex:indexPath.row];
     
     UIImage *img = [UIImage imageNamed: categ.image];
 
-    cell.categoryImage.image = img;
-    cell.categoryLabel.text = categ.name;
+    cell.categoryImageView.image = img;
+    cell.categoryNameLabel.text = categ.name;
     
     return cell;
 }
@@ -77,20 +92,36 @@
     return self.cultureCategories.count;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    CultureCategory *categ = [self.cultureCategories objectAtIndex:indexPath.row];
-    NSString *storyBoardID = @"placesScene";
-    
-    PlacesTableViewController *placesVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardID];
-    
-    placesVC.cultureCategoryId = categ.id;
-    placesVC.cultureCategoryName = categ.name;
-    
-    [self.navigationController pushViewController:placesVC animated:YES];
-}
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    CultureCategory *categ = [self.cultureCategories objectAtIndex:indexPath.row];
+//    NSString *storyBoardID = @"placesScene";
+//    
+//    PlacesTableViewController *placesVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardID];
+//    
+//    placesVC.cultureCategoryId = categ.id;
+//    placesVC.cultureCategoryName = categ.name;
+//    
+//    [self.navigationController pushViewController:placesVC animated:YES];
+//}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 200;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+    NSLog(@"%lu", selectedIndexPath.row);
+    
+    CultureCategory *categ = [self.cultureCategories objectAtIndex:selectedIndexPath.row];
+    
+    self.eventsTabBarController = (UITabBarController*) [segue destinationViewController];
+    self.placesTableView = [self.eventsTabBarController.viewControllers objectAtIndex:0];
+    self.placesTableView.cultureCategoryId = categ.id;
+    self.placesTableView.cultureCategoryName = categ.name;
+    
+    self.placesLocationView = [self.eventsTabBarController.viewControllers objectAtIndex:1];
+    self.placesLocationView.categoryId = categ.id;
 }
 
 

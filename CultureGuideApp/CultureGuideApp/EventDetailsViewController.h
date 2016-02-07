@@ -9,14 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "Event.h"
 
-@interface EventDetailsViewController : UIViewController <UITabBarControllerDelegate>
+@interface EventDetailsViewController : UIViewController //<UITabBarControllerDelegate>
 
 @property (strong,nonatomic) Event* event;
 
 @property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
 
 @property (weak, nonatomic) IBOutlet UILabel *eventDateAndLocation;
-
 
 @property (weak, nonatomic) IBOutlet UILabel *eventDescriptionLabel;
 

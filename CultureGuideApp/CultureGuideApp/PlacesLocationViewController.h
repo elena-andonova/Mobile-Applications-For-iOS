@@ -15,4 +15,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *userLocationLabel;
 
+@property (strong, nonatomic) NSString *categoryId;
+
+@property (strong, nonatomic) NSArray *placesOnMap;
+
 @end

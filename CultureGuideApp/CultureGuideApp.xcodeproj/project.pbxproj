@@ -25,6 +25,7 @@
 		04379EEF1C67650A00931A9D /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04379EED1C67650A00931A9D /* EventCell.xib */; };
 		04379EF31C67A98C00931A9D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04379EF21C67A98C00931A9D /* MapKit.framework */; };
 		04379EF61C67AA2700931A9D /* PlacesLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04379EF51C67AA2700931A9D /* PlacesLocationViewController.m */; };
+		04379EF91C67CFBB00931A9D /* PlaceOnMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 04379EF81C67CFBB00931A9D /* PlaceOnMap.m */; };
 		04CBE0401C654A8D0031890D /* CultureCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE03F1C654A8D0031890D /* CultureCategory.m */; };
 		04CBE0431C655B490031890D /* PlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE0421C655B490031890D /* PlacesTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,8 @@
 		04379EF21C67A98C00931A9D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		04379EF41C67AA2700931A9D /* PlacesLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesLocationViewController.h; sourceTree = "<group>"; };
 		04379EF51C67AA2700931A9D /* PlacesLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesLocationViewController.m; sourceTree = "<group>"; };
+		04379EF71C67CFBB00931A9D /* PlaceOnMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceOnMap.h; sourceTree = "<group>"; };
+		04379EF81C67CFBB00931A9D /* PlaceOnMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOnMap.m; sourceTree = "<group>"; };
 		04CBE03E1C654A8D0031890D /* CultureCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CultureCategory.h; sourceTree = "<group>"; };
 		04CBE03F1C654A8D0031890D /* CultureCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CultureCategory.m; sourceTree = "<group>"; };
 		04CBE0411C655B490031890D /* PlacesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesTableViewController.h; sourceTree = "<group>"; };
@@ -131,6 +134,8 @@
 				040251F11C614776007CAF51 /* Place.m */,
 				04CBE03E1C654A8D0031890D /* CultureCategory.h */,
 				04CBE03F1C654A8D0031890D /* CultureCategory.m */,
+				04379EF71C67CFBB00931A9D /* PlaceOnMap.h */,
+				04379EF81C67CFBB00931A9D /* PlaceOnMap.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 				04379EE11C6672EB00931A9D /* EventsTableViewController.m in Sources */,
 				040251D71C613FF1007CAF51 /* main.m in Sources */,
 				04379EEA1C66B5BB00931A9D /* EventTicketViewController.m in Sources */,
+				04379EF91C67CFBB00931A9D /* PlaceOnMap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
