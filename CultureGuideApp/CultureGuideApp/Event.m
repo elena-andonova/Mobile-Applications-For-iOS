@@ -36,4 +36,12 @@
                    andEventDescription:descr];
 }
 
+- (NSString*) formatedDate{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"HH:mm, dd MMMM (EEEE)"];
+    NSString *dateString = [dateFormatter stringFromDate:self.date];
+    
+    return dateString;
+};
+
 @end

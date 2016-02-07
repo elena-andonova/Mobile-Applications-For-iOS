@@ -40,4 +40,6 @@
              eventTicketsUrl:(NSString*) ticketsUrl
          andEventDescription: (NSString*) descr;
 
+- (NSString*) formatedDate;
+
 @end

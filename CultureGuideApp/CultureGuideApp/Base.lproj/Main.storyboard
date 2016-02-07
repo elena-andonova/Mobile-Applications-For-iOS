@@ -212,19 +212,47 @@
         <scene sceneID="Wvg-Lc-BgK">
             <objects>
                 <tableViewController storyboardIdentifier="eventsScene" id="P55-QP-VRL" customClass="EventsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="r3D-J5-LcI">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="128" sectionHeaderHeight="28" sectionFooterHeight="28" id="r3D-J5-LcI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventsCell" id="U50-4g-gf2">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventsCell" rowHeight="128" id="U50-4g-gf2" customClass="EventCell">
+                                <rect key="frame" x="0.0" y="28" width="600" height="128"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U50-4g-gf2" id="pMR-g8-H4R">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="127"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45F-y2-rDy">
+                                            <rect key="frame" x="8" y="8" width="584" height="61"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bnr-25-eJd">
+                                            <rect key="frame" x="8" y="77" width="584" height="42"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="42" id="uGU-bK-K2Z"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Bnr-25-eJd" firstAttribute="top" secondItem="45F-y2-rDy" secondAttribute="bottom" id="0ZV-yV-fB2"/>
+                                        <constraint firstItem="Bnr-25-eJd" firstAttribute="trailing" secondItem="pMR-g8-H4R" secondAttribute="trailingMargin" id="5Kb-YB-2lY"/>
+                                        <constraint firstItem="Bnr-25-eJd" firstAttribute="bottom" secondItem="pMR-g8-H4R" secondAttribute="bottomMargin" id="aem-nl-QYv"/>
+                                        <constraint firstItem="Bnr-25-eJd" firstAttribute="leading" secondItem="pMR-g8-H4R" secondAttribute="leadingMargin" id="c8j-CS-Kvl"/>
+                                        <constraint firstItem="45F-y2-rDy" firstAttribute="top" secondItem="pMR-g8-H4R" secondAttribute="topMargin" constant="5" id="dpI-co-qt7"/>
+                                        <constraint firstItem="45F-y2-rDy" firstAttribute="trailing" secondItem="Bnr-25-eJd" secondAttribute="trailing" id="kdD-gi-rkg"/>
+                                        <constraint firstItem="45F-y2-rDy" firstAttribute="leading" secondItem="Bnr-25-eJd" secondAttribute="leading" id="zw0-se-OiY"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="eventCellDate" destination="Bnr-25-eJd" id="xr0-u0-Hyh"/>
+                                    <outlet property="eventCellName" destination="45F-y2-rDy" id="CWs-1G-eWD"/>
                                     <segue destination="gmk-Tk-JsV" kind="show" id="kzV-iA-ECa"/>
                                 </connections>
                             </tableViewCell>

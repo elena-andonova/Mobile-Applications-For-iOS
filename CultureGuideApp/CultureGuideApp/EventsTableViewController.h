@@ -12,8 +12,8 @@
 
 @property (strong, nonatomic) NSString *placeId;
 
+@property (strong, nonatomic) NSString *placeName;
+
 @property (strong, nonatomic) NSArray *events;
-
-
 
 @end

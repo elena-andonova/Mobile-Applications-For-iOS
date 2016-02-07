@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = [NSString stringWithFormat:@"%@", self.cultureCategoryName];
     [self loadPlaces];
 }
 
@@ -84,6 +85,7 @@
     EventsTableViewController *eventsVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardID];
     
     eventsVC.placeId = place.id;
+    eventsVC.placeName = place.name;
     
     [self.navigationController pushViewController:eventsVC animated:YES];
 }

@@ -26,7 +26,7 @@
     
     self.eventImageView.image = img;
     
-    NSString *date = [self formatDate:self.event.date];
+    NSString *date = [self.event formatedDate];
     self.eventDateAndLocation.text = [NSString stringWithFormat:@"%@,\n%@", date, self.event.hall];
     
     NSAttributedString *descriptionString = [self styleText:self.event.eventDescription];
@@ -34,14 +34,6 @@
 
     self.eventOverviewTextView.text = self.event.eventOverview;
 }
-
-- (NSString*) formatDate: (NSDate*) date{
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"HH:mm, dd MMMM (EEEE)"];
-    NSString *dateString = [dateFormatter stringFromDate:date];
-    
-    return dateString;
-};
 
 -(NSAttributedString*) styleText: (NSString*) text{
     NSMutableParagraphStyle *style =  [[NSParagraphStyle defaultParagraphStyle] mutableCopy];

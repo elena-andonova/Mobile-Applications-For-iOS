@@ -84,6 +84,7 @@
     PlacesTableViewController *placesVC = [self.storyboard instantiateViewControllerWithIdentifier:storyBoardID];
     
     placesVC.cultureCategoryId = categ.id;
+    placesVC.cultureCategoryName = categ.name;
     
     [self.navigationController pushViewController:placesVC animated:YES];
 }

@@ -21,6 +21,8 @@
 		04379EE11C6672EB00931A9D /* EventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04379EE01C6672EB00931A9D /* EventsTableViewController.m */; };
 		04379EE41C667D8900931A9D /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04379EE31C667D8900931A9D /* EventDetailsViewController.m */; };
 		04379EEA1C66B5BB00931A9D /* EventTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04379EE91C66B5BB00931A9D /* EventTicketViewController.m */; };
+		04379EEE1C67650A00931A9D /* EventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04379EEC1C67650A00931A9D /* EventCell.m */; };
+		04379EEF1C67650A00931A9D /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04379EED1C67650A00931A9D /* EventCell.xib */; };
 		04CBE0401C654A8D0031890D /* CultureCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE03F1C654A8D0031890D /* CultureCategory.m */; };
 		04CBE0431C655B490031890D /* PlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE0421C655B490031890D /* PlacesTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -50,6 +52,9 @@
 		04379EE31C667D8900931A9D /* EventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
 		04379EE81C66B5BB00931A9D /* EventTicketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTicketViewController.h; sourceTree = "<group>"; };
 		04379EE91C66B5BB00931A9D /* EventTicketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTicketViewController.m; sourceTree = "<group>"; };
+		04379EEB1C67650A00931A9D /* EventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCell.h; sourceTree = "<group>"; };
+		04379EEC1C67650A00931A9D /* EventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCell.m; sourceTree = "<group>"; };
+		04379EED1C67650A00931A9D /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		04CBE03E1C654A8D0031890D /* CultureCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CultureCategory.h; sourceTree = "<group>"; };
 		04CBE03F1C654A8D0031890D /* CultureCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CultureCategory.m; sourceTree = "<group>"; };
 		04CBE0411C655B490031890D /* PlacesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesTableViewController.h; sourceTree = "<group>"; };
@@ -146,6 +151,9 @@
 				040251F81C628932007CAF51 /* CategoryCell.xib */,
 				040251FA1C628ADB007CAF51 /* CategoryCell.h */,
 				040251FB1C628ADB007CAF51 /* CategoryCell.m */,
+				04379EEB1C67650A00931A9D /* EventCell.h */,
+				04379EEC1C67650A00931A9D /* EventCell.m */,
+				04379EED1C67650A00931A9D /* EventCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -207,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04379EEF1C67650A00931A9D /* EventCell.xib in Resources */,
 				040251E51C613FF1007CAF51 /* LaunchScreen.storyboard in Resources */,
 				040251E21C613FF1007CAF51 /* Assets.xcassets in Resources */,
 				040251E01C613FF1007CAF51 /* Main.storyboard in Resources */,
@@ -229,6 +238,7 @@
 				04379EE41C667D8900931A9D /* EventDetailsViewController.m in Sources */,
 				04CBE0431C655B490031890D /* PlacesTableViewController.m in Sources */,
 				040251DA1C613FF1007CAF51 /* AppDelegate.m in Sources */,
+				04379EEE1C67650A00931A9D /* EventCell.m in Sources */,
 				04379EE11C6672EB00931A9D /* EventsTableViewController.m in Sources */,
 				040251D71C613FF1007CAF51 /* main.m in Sources */,
 				04379EEA1C66B5BB00931A9D /* EventTicketViewController.m in Sources */,

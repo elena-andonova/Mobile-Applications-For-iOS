@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) NSString *cultureCategoryId;
 
+@property (strong, nonatomic) NSString *cultureCategoryName;
+
 @property (strong, nonatomic) NSArray *places;
 
 @end

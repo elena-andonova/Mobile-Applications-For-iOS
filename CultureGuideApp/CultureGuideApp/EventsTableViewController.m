@@ -10,6 +10,7 @@
 #import "Event.h"
 #import "EventDetailsViewController.h"
 #import "EventTicketViewController.h"
+#import "EventCell.h"
 
 @interface EventsTableViewController ()
 
@@ -25,6 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = [NSString stringWithFormat:@"%@", self.placeName];
     [self loadEvents];
     
     self.tableView.delegate = self;
@@ -81,19 +83,24 @@
     
     NSString *cellIdentifier = @"eventsCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    EventCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[EventCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
 
     Event *event = [self.events objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = event.name;
+    //cell.textLabel.text = event.name;
+    cell.eventCellName.text = event.name;
+    cell.eventCellDate.text = [event formatedDate];
     
     return cell;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 80;
+}
 
 //-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 //    
