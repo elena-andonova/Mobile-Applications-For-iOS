@@ -66,7 +66,7 @@
             </objects>
             <point key="canvasLocation" x="340" y="-782"/>
         </scene>
-        <!--Table-->
+        <!--List-->
         <scene sceneID="gM7-H9-8iJ">
             <objects>
                 <tableViewController storyboardIdentifier="placesScene" id="rvG-vR-Rv8" customClass="PlacesTableViewController" sceneMemberID="viewController">
@@ -89,7 +89,7 @@
                             <outlet property="delegate" destination="rvG-vR-Rv8" id="5Nw-gv-nJX"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Table" id="j7j-HI-YAb"/>
+                    <tabBarItem key="tabBarItem" title="List" image="list-32" id="j7j-HI-YAb"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AfJ-jJ-NKB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -299,7 +299,7 @@
             </objects>
             <point key="canvasLocation" x="1067" y="631"/>
         </scene>
-        <!--Item-->
+        <!--On Map-->
         <scene sceneID="EJC-m9-Gcl">
             <objects>
                 <viewController id="zXo-E4-EGD" customClass="PlacesLocationViewController" sceneMemberID="viewController">
@@ -332,7 +332,7 @@
                             <constraint firstItem="mlM-hh-Frr" firstAttribute="top" secondItem="yqg-hv-Fdk" secondAttribute="bottom" id="xYy-rW-l1v"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="PN8-hu-J8x"/>
+                    <tabBarItem key="tabBarItem" title="On Map" image="map-32" id="PN8-hu-J8x"/>
                     <connections>
                         <outlet property="locationsMapView" destination="XTK-qt-bOp" id="WQI-7n-R79"/>
                         <outlet property="userLocationLabel" destination="mlM-hh-Frr" id="QAX-gC-28l"/>
@@ -381,6 +381,8 @@
     </scenes>
     <resources>
         <image name="file-32" width="32" height="32"/>
+        <image name="list-32" width="32" height="32"/>
+        <image name="map-32" width="32" height="32"/>
         <image name="ticket-32" width="32" height="32"/>
     </resources>
 </document>

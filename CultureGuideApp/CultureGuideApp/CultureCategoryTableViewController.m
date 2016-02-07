@@ -32,6 +32,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
+    self.title = @"Culture Guide";
     [self loadCategories];
 }
 
