@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Event.h"
 
 @interface EventTicketViewController : UIViewController
 
-@property (strong, nonatomic) NSString* url;
+@property (strong, nonatomic) Event *event;
+
+@property (weak, nonatomic) IBOutlet UILabel *eventDetailsLabel;
 
 @property (weak, nonatomic) IBOutlet UIWebView *ticketsWebView;
-
-@property (strong, nonatomic) NSString* testText;
 
 @end

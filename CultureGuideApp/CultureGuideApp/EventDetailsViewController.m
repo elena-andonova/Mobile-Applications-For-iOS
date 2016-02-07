@@ -25,9 +25,35 @@
     UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:imgUrlString]];
     
     self.eventImageView.image = img;
-    self.eventDescriptionTextView.text = self.event.eventDescription;
+    
+    NSString *date = [self formatDate:self.event.date];
+    self.eventDateAndLocation.text = [NSString stringWithFormat:@"%@,\n%@", date, self.event.hall];
+    
+    NSAttributedString *descriptionString = [self styleText:self.event.eventDescription];
+    self.eventDescriptionLabel.attributedText = descriptionString;
+
     self.eventOverviewTextView.text = self.event.eventOverview;
 }
+
+- (NSString*) formatDate: (NSDate*) date{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"HH:mm, dd MMMM (EEEE)"];
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    
+    return dateString;
+};
+
+-(NSAttributedString*) styleText: (NSString*) text{
+    NSMutableParagraphStyle *style =  [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    style.alignment = NSTextAlignmentLeft;
+    style.firstLineHeadIndent = 25.0f;
+    style.headIndent = 25.0f;
+    style.tailIndent = -25.0f;
+    
+    NSAttributedString *attrText = [[NSAttributedString alloc] initWithString:text attributes:@{ NSParagraphStyleAttributeName : style}];
+    
+    return attrText;
+};
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

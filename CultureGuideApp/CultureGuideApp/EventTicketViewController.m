@@ -16,11 +16,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@", self.testText);
-    NSURL *urlToLoad = [NSURL URLWithString:self.url];
+    
+    NSString *date = [self formatDate:self.event.date];
+    NSLog(@"%@",[NSString stringWithFormat:@"%@,\n%@", date, self.event.hall]);
+    self.eventDetailsLabel.text = [NSString stringWithFormat:@"%@,\n%@", date, self.event.hall];
+    
+    NSURL *urlToLoad = [NSURL URLWithString:self.event.eventTicketsUrl];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:urlToLoad];
     [self.ticketsWebView loadRequest:urlRequest];
 }
+
+- (NSString*) formatDate: (NSDate*) date{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"HH:mm, dd MMMM (EEEE)"];
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    
+    return dateString;
+};
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

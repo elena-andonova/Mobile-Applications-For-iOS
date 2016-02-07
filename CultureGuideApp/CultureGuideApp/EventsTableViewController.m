@@ -161,9 +161,7 @@
     self.eventDetailsView.event = event;
     
     self.eventTicketView = [self.myTabbarController.viewControllers objectAtIndex:1];
-    self.eventTicketView.url = event.eventTicketsUrl;
-    self.eventTicketView.testText = @"Coming from events table view..";
-    
+    self.eventTicketView.event = event;
 }
 
 
