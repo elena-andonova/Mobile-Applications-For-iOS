@@ -23,6 +23,8 @@
 		04379EEA1C66B5BB00931A9D /* EventTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04379EE91C66B5BB00931A9D /* EventTicketViewController.m */; };
 		04379EEE1C67650A00931A9D /* EventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04379EEC1C67650A00931A9D /* EventCell.m */; };
 		04379EEF1C67650A00931A9D /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04379EED1C67650A00931A9D /* EventCell.xib */; };
+		04379EF31C67A98C00931A9D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04379EF21C67A98C00931A9D /* MapKit.framework */; };
+		04379EF61C67AA2700931A9D /* PlacesLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04379EF51C67AA2700931A9D /* PlacesLocationViewController.m */; };
 		04CBE0401C654A8D0031890D /* CultureCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE03F1C654A8D0031890D /* CultureCategory.m */; };
 		04CBE0431C655B490031890D /* PlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE0421C655B490031890D /* PlacesTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -55,6 +57,9 @@
 		04379EEB1C67650A00931A9D /* EventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCell.h; sourceTree = "<group>"; };
 		04379EEC1C67650A00931A9D /* EventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCell.m; sourceTree = "<group>"; };
 		04379EED1C67650A00931A9D /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
+		04379EF21C67A98C00931A9D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		04379EF41C67AA2700931A9D /* PlacesLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesLocationViewController.h; sourceTree = "<group>"; };
+		04379EF51C67AA2700931A9D /* PlacesLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesLocationViewController.m; sourceTree = "<group>"; };
 		04CBE03E1C654A8D0031890D /* CultureCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CultureCategory.h; sourceTree = "<group>"; };
 		04CBE03F1C654A8D0031890D /* CultureCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CultureCategory.m; sourceTree = "<group>"; };
 		04CBE0411C655B490031890D /* PlacesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesTableViewController.h; sourceTree = "<group>"; };
@@ -66,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04379EF31C67A98C00931A9D /* MapKit.framework in Frameworks */,
 				04379EDA1C6645B300931A9D /* EverliveSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,6 +82,7 @@
 		040251C91C613FF1007CAF51 = {
 			isa = PBXGroup;
 			children = (
+				04379EF21C67A98C00931A9D /* MapKit.framework */,
 				04379ED81C66450C00931A9D /* EverliveSDK.framework */,
 				040251D41C613FF1007CAF51 /* CultureGuideApp */,
 				040251D31C613FF1007CAF51 /* Products */,
@@ -141,6 +148,8 @@
 				04379EE31C667D8900931A9D /* EventDetailsViewController.m */,
 				04379EE81C66B5BB00931A9D /* EventTicketViewController.h */,
 				04379EE91C66B5BB00931A9D /* EventTicketViewController.m */,
+				04379EF41C67AA2700931A9D /* PlacesLocationViewController.h */,
+				04379EF51C67AA2700931A9D /* PlacesLocationViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -189,6 +198,11 @@
 				TargetAttributes = {
 					040251D11C613FF1007CAF51 = {
 						CreatedOnToolsVersion = 7.2;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -239,6 +253,7 @@
 				04CBE0431C655B490031890D /* PlacesTableViewController.m in Sources */,
 				040251DA1C613FF1007CAF51 /* AppDelegate.m in Sources */,
 				04379EEE1C67650A00931A9D /* EventCell.m in Sources */,
+				04379EF61C67AA2700931A9D /* PlacesLocationViewController.m in Sources */,
 				04379EE11C6672EB00931A9D /* EventsTableViewController.m in Sources */,
 				040251D71C613FF1007CAF51 /* main.m in Sources */,
 				04379EEA1C66B5BB00931A9D /* EventTicketViewController.m in Sources */,

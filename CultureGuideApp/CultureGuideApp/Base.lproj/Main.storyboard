@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yKY-Ra-C6N">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zXo-E4-EGD">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -266,6 +266,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gkc-c7-WWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1205" y="779"/>
+        </scene>
+        <!--Places Location View Controller-->
+        <scene sceneID="EJC-m9-Gcl">
+            <objects>
+                <viewController id="zXo-E4-EGD" customClass="PlacesLocationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yqg-hv-Fdk"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dn0-8v-FkZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tv9-QY-guZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XTK-qt-bOp">
+                                <rect key="frame" x="0.0" y="105" width="600" height="495"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlM-hh-Frr">
+                                <rect key="frame" x="0.0" y="53" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="vtw-Y6-sy6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mlM-hh-Frr" firstAttribute="trailing" secondItem="XTK-qt-bOp" secondAttribute="trailing" id="4ln-rE-2U1"/>
+                            <constraint firstAttribute="trailing" secondItem="mlM-hh-Frr" secondAttribute="trailing" id="8Jb-SM-1qk"/>
+                            <constraint firstItem="mlM-hh-Frr" firstAttribute="top" secondItem="yqg-hv-Fdk" secondAttribute="bottom" constant="33" id="Lly-PP-SSX"/>
+                            <constraint firstItem="XTK-qt-bOp" firstAttribute="top" secondItem="mlM-hh-Frr" secondAttribute="bottom" constant="8" symbolic="YES" id="kec-eD-z3I"/>
+                            <constraint firstItem="mlM-hh-Frr" firstAttribute="leading" secondItem="Tv9-QY-guZ" secondAttribute="leading" id="sLv-6F-P2S"/>
+                            <constraint firstItem="XTK-qt-bOp" firstAttribute="bottom" secondItem="Dn0-8v-FkZ" secondAttribute="top" id="tIf-E9-qqU"/>
+                            <constraint firstItem="mlM-hh-Frr" firstAttribute="leading" secondItem="XTK-qt-bOp" secondAttribute="leading" id="zWv-Ve-LqH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="locationsMapView" destination="XTK-qt-bOp" id="WQI-7n-R79"/>
+                        <outlet property="userLocationLabel" destination="mlM-hh-Frr" id="QAX-gC-28l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z24-HX-1oX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2020" y="74"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="eI3-gN-jND">
