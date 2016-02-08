@@ -23,12 +23,43 @@
     //self.title = [NSString stringWithFormat:@"%@", self.cultureCategoryName];
     
     [self.parentViewController.navigationItem setTitle:self.cultureCategoryName];
-    [self loadPlaces];
+    //[self loadPlaces];
     
     UIEdgeInsets adjustForTabbarInsets = UIEdgeInsetsMake(CGRectGetHeight(self.navigationController.navigationBar.frame) + 20, 0, 0, 0);
     self.tableView.contentInset = adjustForTabbarInsets;
     self.tableView.scrollIndicatorInsets = adjustForTabbarInsets;
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if ([self.cultureCategoryName  isEqual: @"Favorites"]) {
+        LocalDatabase *db = [LocalDatabase database];
+        
+        NSArray *favPlacesArray = [NSArray arrayWithArray:[db favoritePlaces]];
+        NSLog(@"%lu", favPlacesArray.count);
+        if(favPlacesArray.count == 0)
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Favorites"
+                                                            message:@"You haven't added any favorites yet ;("
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+        
+        self.places = favPlacesArray;
+    }
+    else
+    {
+       [self loadPlaces];
+    }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [self.tableView reloadData];
+        
+    });
+};
 
 -(void)loadPlaces{
     EVDataStore *dataStore = [EVDataStore sharedInstance];

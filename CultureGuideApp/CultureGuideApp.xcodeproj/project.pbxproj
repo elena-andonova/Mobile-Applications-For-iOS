@@ -28,7 +28,8 @@
 		04379EF91C67CFBB00931A9D /* PlaceOnMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 04379EF81C67CFBB00931A9D /* PlaceOnMap.m */; };
 		04379F011C68033D00931A9D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04379F001C68033D00931A9D /* libsqlite3.tbd */; };
 		04379F051C6803E700931A9D /* LocalDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 04379F041C6803E700931A9D /* LocalDatabase.m */; };
-		04379F0E1C6810B400931A9D /* FavoritePlaces.db in Resources */ = {isa = PBXBuildFile; fileRef = 04379F0D1C6810B400931A9D /* FavoritePlaces.db */; };
+		04379F101C68736F00931A9D /* FavoritePlaces.db in Resources */ = {isa = PBXBuildFile; fileRef = 04379F0F1C68736F00931A9D /* FavoritePlaces.db */; };
+		04379F131C68789200931A9D /* CultureCategorySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04379F121C68789200931A9D /* CultureCategorySwift.swift */; };
 		04CBE0401C654A8D0031890D /* CultureCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE03F1C654A8D0031890D /* CultureCategory.m */; };
 		04CBE0431C655B490031890D /* PlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE0421C655B490031890D /* PlacesTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -69,7 +70,9 @@
 		04379F001C68033D00931A9D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		04379F031C6803E700931A9D /* LocalDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalDatabase.h; sourceTree = "<group>"; };
 		04379F041C6803E700931A9D /* LocalDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalDatabase.m; sourceTree = "<group>"; };
-		04379F0D1C6810B400931A9D /* FavoritePlaces.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = FavoritePlaces.db; sourceTree = "<group>"; };
+		04379F0F1C68736F00931A9D /* FavoritePlaces.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = FavoritePlaces.db; sourceTree = "<group>"; };
+		04379F111C68789200931A9D /* CultureGuideApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CultureGuideApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		04379F121C68789200931A9D /* CultureCategorySwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CultureCategorySwift.swift; sourceTree = "<group>"; };
 		04CBE03E1C654A8D0031890D /* CultureCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CultureCategory.h; sourceTree = "<group>"; };
 		04CBE03F1C654A8D0031890D /* CultureCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CultureCategory.m; sourceTree = "<group>"; };
 		04CBE0411C655B490031890D /* PlacesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesTableViewController.h; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 				04CBE03F1C654A8D0031890D /* CultureCategory.m */,
 				04379EF71C67CFBB00931A9D /* PlaceOnMap.h */,
 				04379EF81C67CFBB00931A9D /* PlaceOnMap.m */,
+				04379F121C68789200931A9D /* CultureCategorySwift.swift */,
+				04379F111C68789200931A9D /* CultureGuideApp-Bridging-Header.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -195,7 +200,7 @@
 		04379F061C68053100931A9D /* Db */ = {
 			isa = PBXGroup;
 			children = (
-				04379F0D1C6810B400931A9D /* FavoritePlaces.db */,
+				04379F0F1C68736F00931A9D /* FavoritePlaces.db */,
 			);
 			name = Db;
 			sourceTree = "<group>";
@@ -265,7 +270,7 @@
 				04379EEF1C67650A00931A9D /* EventCell.xib in Resources */,
 				040251E51C613FF1007CAF51 /* LaunchScreen.storyboard in Resources */,
 				040251E21C613FF1007CAF51 /* Assets.xcassets in Resources */,
-				04379F0E1C6810B400931A9D /* FavoritePlaces.db in Resources */,
+				04379F101C68736F00931A9D /* FavoritePlaces.db in Resources */,
 				040251E01C613FF1007CAF51 /* Main.storyboard in Resources */,
 				040251F91C628932007CAF51 /* CategoryCell.xib in Resources */,
 			);
@@ -282,6 +287,7 @@
 				040251F21C614776007CAF51 /* Place.m in Sources */,
 				040251EF1C6141E4007CAF51 /* Event.m in Sources */,
 				040251F61C628114007CAF51 /* CultureCategoryTableViewController.m in Sources */,
+				04379F131C68789200931A9D /* CultureCategorySwift.swift in Sources */,
 				040251FC1C628ADB007CAF51 /* CategoryCell.m in Sources */,
 				04379EE41C667D8900931A9D /* EventDetailsViewController.m in Sources */,
 				04CBE0431C655B490031890D /* PlacesTableViewController.m in Sources */,
@@ -338,6 +344,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -359,6 +367,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				SDKROOT = iphoneos;
+				"SWIFT_INCLUDE_PATHS[arch=*]" = "";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "CultureCategorySwift-Swift.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -383,6 +393,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -397,6 +409,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "CultureCategorySwift-Swift.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -406,6 +419,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -414,6 +428,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EA.CultureGuideApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CultureGuideApp/CultureGuideApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -421,6 +437,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -429,6 +446,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = EA.CultureGuideApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CultureGuideApp/CultureGuideApp-Bridging-Header.h";
 			};
 			name = Release;
 		};

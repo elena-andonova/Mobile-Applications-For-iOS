@@ -15,6 +15,9 @@
 #import "CategoryCell.h"
 #import "LocalDatabase.h"
 
+#import "CultureCategorySwift-Swift.h"
+
+
 @interface CultureCategoryTableViewController()
 
 @property (strong, nonatomic) UITabBarController *eventsTabBarController;
@@ -29,10 +32,6 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    
-    LocalDatabase *db = [LocalDatabase database];
-    
-    NSArray *testArr = [NSArray arrayWithArray:[db favoritePlaces]];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -43,7 +42,13 @@
 
 -(void)loadCategories{
     EVDataStore *dataStore = [EVDataStore sharedInstance];
-    [dataStore fetchAll:[CultureCategory class] block:^(NSArray *result, NSError *error) {
+    //[dataStore fetchAll:[CultureCategoryObjC class] block:^(NSArray *result, NSError *error) {
+    NSLog(@"obj c: %@", [CultureCategory class]);
+    NSLog(@"swift: %@", [[CultureCategorySwift self] description]);
+    //id class = CultureCategory.bridge;
+    //NSLog(@"swift 2: %@", class);
+    
+    [CultureCategory fetchAll:^(NSArray *result, NSError *error) {
         if (error != nil) {
             NSLog(@"Unfortunately an error occurred: %@", error.domain);
         } else {
@@ -51,7 +56,8 @@
             NSMutableArray *categories = [NSMutableArray array];
             for (int index = 0; index < [result count]; index++)
             {
-                CultureCategory *categ= [result objectAtIndex:index];
+                //CultureCategoryObjC *categ= [result objectAtIndex:index];
+                CultureCategorySwift *categ= [result objectAtIndex:index];
                 [categories addObject:categ];
                 NSLog(@"Category is: %@, id: %@", categ.name, categ.id);
             }
@@ -84,7 +90,8 @@
     
     
     
-    CultureCategory *categ = [self.cultureCategories objectAtIndex:indexPath.row];
+    //CultureCategoryObjC *categ = [self.cultureCategories objectAtIndex:indexPath.row];
+    CultureCategorySwift *categ = [self.cultureCategories objectAtIndex:indexPath.row];
     
     UIImage *img = [UIImage imageNamed: categ.image];
 
@@ -120,8 +127,9 @@
     NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
     NSLog(@"%lu", selectedIndexPath.row);
     
-    CultureCategory *categ = [self.cultureCategories objectAtIndex:selectedIndexPath.row];
-    
+    //CultureCategoryObjC *categ = [self.cultureCategories objectAtIndex:selectedIndexPath.row];
+    CultureCategorySwift *categ = [self.cultureCategories objectAtIndex:selectedIndexPath.row];
+ 
     self.eventsTabBarController = (UITabBarController*) [segue destinationViewController];
     self.placesTableView = [self.eventsTabBarController.viewControllers objectAtIndex:0];
     self.placesTableView.cultureCategoryId = categ.id;

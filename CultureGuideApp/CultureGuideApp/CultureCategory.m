@@ -19,15 +19,6 @@
     return self;
 }
 
--(instancetype)initWithName:(NSString *)name image:(NSString *)image andPlaces:(NSArray *)places{
-    
-    if (self = [super init]) {
-        self.name = name;
-        self.image = image;
-        self.places = places;
-    }
-    return self;
-}
 
 +(instancetype)cultureCategoryWithName:(NSString *)name andImage:(NSString *)image{
     return [[CultureCategory alloc] initWithName:name andImage:image];

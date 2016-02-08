@@ -14,8 +14,6 @@
 
 @property (strong, nonatomic) NSString *image;
 
-@property (strong,nonatomic) NSArray *places;
-
 -(instancetype)initWithName: (NSString*) name
                    andImage:(NSString*) image;
 
