@@ -43,10 +43,10 @@
     
     [request setPredicate:[NSPredicate predicateWithFormat:@"CultureCategoryId == %@",self.categoryId]];
     
+        __weak id weakSelf = self;
+    
     [dataStore executeFetchRequest:request block:^(NSArray *result, NSError *error) {
-        
-        NSMutableArray *places = [NSMutableArray array];
-        
+       
         for (int index = 0; index < [result count]; index++)
         {
             Place *place = [result objectAtIndex:index];
@@ -58,7 +58,7 @@
             placeOnMap.title = place.name;
             placeOnMap.subtitle = place.location;
             placeOnMap.coordinate = placeCoordinates;
-            [self.locationsMapView addAnnotation:placeOnMap];
+            [[weakSelf locationsMapView] addAnnotation:placeOnMap];
         }
     }];
 }

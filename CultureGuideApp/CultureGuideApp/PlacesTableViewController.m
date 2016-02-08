@@ -40,7 +40,7 @@
         if(favPlacesArray.count == 0)
         {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Favorites"
-                                                            message:@"You haven't added any favorites yet ;("
+                                                            message:@"You haven't added any favorites yet..."
                                                            delegate:nil
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
@@ -67,6 +67,8 @@
     
     [request setPredicate:[NSPredicate predicateWithFormat:@"CultureCategoryId == %@",self.cultureCategoryId]];
     
+    __weak id weakSelf = self;
+    
     [dataStore executeFetchRequest:request block:^(NSArray *result, NSError *error) {
         //here result will contain the fetched Activities
         NSMutableArray *places = [NSMutableArray array];
@@ -80,7 +82,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            [self.tableView reloadData];
+            [[weakSelf tableView] reloadData];
             
         });
         
@@ -200,7 +202,7 @@
         [self.tableView setEditing:NO];
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Favorites"
-                                                        message: [NSString stringWithFormat:@"%@ added to your Favorites ;)", favplace.name]
+                                                        message: [NSString stringWithFormat:@"%@ added to your Favorites!", favplace.name]
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];

@@ -42,6 +42,7 @@
     
     [request setPredicate:[NSPredicate predicateWithFormat:@"PlaceId == %@",self.placeId]];
     
+    __weak id weakSelf = self;
     [dataStore executeFetchRequest:request block:^(NSArray *result, NSError *error) {
         //here result will contain the fetched Activities
         NSMutableArray *events = [NSMutableArray array];
@@ -55,7 +56,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            [self.tableView reloadData];
+            [[weakSelf tableView] reloadData];
             
         });
         

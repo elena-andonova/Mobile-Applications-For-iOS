@@ -48,6 +48,8 @@
     //id class = CultureCategory.bridge;
     //NSLog(@"swift 2: %@", class);
     
+    __weak id weakSelf = self;
+    
     [CultureCategory fetchAll:^(NSArray *result, NSError *error) {
         if (error != nil) {
             NSLog(@"Unfortunately an error occurred: %@", error.domain);
@@ -65,7 +67,7 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                [self.tableView reloadData];
+                [[weakSelf tableView] reloadData];
                 
             });
             
