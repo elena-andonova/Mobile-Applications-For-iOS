@@ -65,7 +65,7 @@
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
     location = [locations lastObject];
-    //NSLog(@"%@", location);
+    NSLog(@"%@", location);
     
     //+42.69558360,+23.31977180
     CLLocationCoordinate2D coordinate = [location coordinate];

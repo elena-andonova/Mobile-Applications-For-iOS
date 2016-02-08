@@ -191,15 +191,20 @@
 - (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewRowAction *favAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"+Fav" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
-        // maybe show an action sheet with more options
-        
-        
+
         LocalDatabase *db = [LocalDatabase database];
         
         Place *favplace = [self.places objectAtIndex:indexPath.row];
-        [db addFavoritePlace:favplace];        
+        [db addFavoritePlace:favplace];
         
         [self.tableView setEditing:NO];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Favorites"
+                                                        message: [NSString stringWithFormat:@"%@ added to your Favorites ;)", favplace.name]
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }];
     
     favAction.backgroundColor = [UIColor purpleColor];

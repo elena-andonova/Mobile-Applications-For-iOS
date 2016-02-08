@@ -17,9 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.parentViewController.navigationItem setTitle:self.event.name];
     
     //self.title = self.event.name;
-    [self.parentViewController.navigationItem setTitle:self.event.name];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
     
     NSURL *imgUrlString = [NSURL URLWithString:self.event.eventImage];
     UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:imgUrlString]];
@@ -31,7 +35,7 @@
     
     NSAttributedString *descriptionString = [self styleText:self.event.eventDescription];
     self.eventDescriptionLabel.attributedText = descriptionString;
-
+    
     self.eventOverviewTextView.text = self.event.eventOverview;
 }
 
@@ -60,13 +64,13 @@
 //}
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
