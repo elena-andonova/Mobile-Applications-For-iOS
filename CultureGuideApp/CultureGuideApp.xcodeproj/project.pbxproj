@@ -26,6 +26,9 @@
 		04379EF31C67A98C00931A9D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04379EF21C67A98C00931A9D /* MapKit.framework */; };
 		04379EF61C67AA2700931A9D /* PlacesLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04379EF51C67AA2700931A9D /* PlacesLocationViewController.m */; };
 		04379EF91C67CFBB00931A9D /* PlaceOnMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 04379EF81C67CFBB00931A9D /* PlaceOnMap.m */; };
+		04379F011C68033D00931A9D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04379F001C68033D00931A9D /* libsqlite3.tbd */; };
+		04379F051C6803E700931A9D /* LocalDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 04379F041C6803E700931A9D /* LocalDatabase.m */; };
+		04379F0E1C6810B400931A9D /* FavoritePlaces.db in Resources */ = {isa = PBXBuildFile; fileRef = 04379F0D1C6810B400931A9D /* FavoritePlaces.db */; };
 		04CBE0401C654A8D0031890D /* CultureCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE03F1C654A8D0031890D /* CultureCategory.m */; };
 		04CBE0431C655B490031890D /* PlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE0421C655B490031890D /* PlacesTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -63,6 +66,10 @@
 		04379EF51C67AA2700931A9D /* PlacesLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesLocationViewController.m; sourceTree = "<group>"; };
 		04379EF71C67CFBB00931A9D /* PlaceOnMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceOnMap.h; sourceTree = "<group>"; };
 		04379EF81C67CFBB00931A9D /* PlaceOnMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOnMap.m; sourceTree = "<group>"; };
+		04379F001C68033D00931A9D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		04379F031C6803E700931A9D /* LocalDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalDatabase.h; sourceTree = "<group>"; };
+		04379F041C6803E700931A9D /* LocalDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalDatabase.m; sourceTree = "<group>"; };
+		04379F0D1C6810B400931A9D /* FavoritePlaces.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = FavoritePlaces.db; sourceTree = "<group>"; };
 		04CBE03E1C654A8D0031890D /* CultureCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CultureCategory.h; sourceTree = "<group>"; };
 		04CBE03F1C654A8D0031890D /* CultureCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CultureCategory.m; sourceTree = "<group>"; };
 		04CBE0411C655B490031890D /* PlacesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesTableViewController.h; sourceTree = "<group>"; };
@@ -74,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04379F011C68033D00931A9D /* libsqlite3.tbd in Frameworks */,
 				04379EF31C67A98C00931A9D /* MapKit.framework in Frameworks */,
 				04379EDA1C6645B300931A9D /* EverliveSDK.framework in Frameworks */,
 			);
@@ -85,6 +93,7 @@
 		040251C91C613FF1007CAF51 = {
 			isa = PBXGroup;
 			children = (
+				04379F001C68033D00931A9D /* libsqlite3.tbd */,
 				04379EF21C67A98C00931A9D /* MapKit.framework */,
 				04379ED81C66450C00931A9D /* EverliveSDK.framework */,
 				040251D41C613FF1007CAF51 /* CultureGuideApp */,
@@ -103,6 +112,8 @@
 		040251D41C613FF1007CAF51 /* CultureGuideApp */ = {
 			isa = PBXGroup;
 			children = (
+				04379F061C68053100931A9D /* Db */,
+				04379F021C6803A800931A9D /* LocalData */,
 				040251F71C6288F0007CAF51 /* Views */,
 				040251F31C627AFB007CAF51 /* ViewControllers */,
 				040251EC1C6140F7007CAF51 /* Models */,
@@ -172,6 +183,23 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		04379F021C6803A800931A9D /* LocalData */ = {
+			isa = PBXGroup;
+			children = (
+				04379F031C6803E700931A9D /* LocalDatabase.h */,
+				04379F041C6803E700931A9D /* LocalDatabase.m */,
+			);
+			name = LocalData;
+			sourceTree = "<group>";
+		};
+		04379F061C68053100931A9D /* Db */ = {
+			isa = PBXGroup;
+			children = (
+				04379F0D1C6810B400931A9D /* FavoritePlaces.db */,
+			);
+			name = Db;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,6 +265,7 @@
 				04379EEF1C67650A00931A9D /* EventCell.xib in Resources */,
 				040251E51C613FF1007CAF51 /* LaunchScreen.storyboard in Resources */,
 				040251E21C613FF1007CAF51 /* Assets.xcassets in Resources */,
+				04379F0E1C6810B400931A9D /* FavoritePlaces.db in Resources */,
 				040251E01C613FF1007CAF51 /* Main.storyboard in Resources */,
 				040251F91C628932007CAF51 /* CategoryCell.xib in Resources */,
 			);
@@ -261,6 +290,7 @@
 				04379EF61C67AA2700931A9D /* PlacesLocationViewController.m in Sources */,
 				04379EE11C6672EB00931A9D /* EventsTableViewController.m in Sources */,
 				040251D71C613FF1007CAF51 /* main.m in Sources */,
+				04379F051C6803E700931A9D /* LocalDatabase.m in Sources */,
 				04379EEA1C66B5BB00931A9D /* EventTicketViewController.m in Sources */,
 				04379EF91C67CFBB00931A9D /* PlaceOnMap.m in Sources */,
 			);

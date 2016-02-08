@@ -16,11 +16,8 @@
 
 @property (strong, nonatomic) NSString *location;
 
-@property (strong, nonatomic) NSArray *events;
-
 @property (strong, nonatomic) NSDictionary *geoLocation;
 
 -(instancetype) initWithName: (NSString*) name;
-
 
 @end

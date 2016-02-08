@@ -9,6 +9,7 @@
 #import "PlacesTableViewController.h"
 #import "Place.h"
 #import "EventsTableViewController.h"
+#import "LocalDatabase.h"
 
 @interface PlacesTableViewController ()
 
@@ -140,8 +141,6 @@
     
     cell.textLabel.text = place.name;
     
-    self.tabBarController.delegate = self;
-    
     return cell;
 }
 
@@ -155,6 +154,37 @@
     eventsVC.placeName = place.name;
     
     [self.navigationController pushViewController:eventsVC animated:YES];
+}
+
+
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewRowAction *favAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"+Fav" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
+        // maybe show an action sheet with more options
+        
+        
+        LocalDatabase *db = [LocalDatabase database];
+        
+        Place *favplace = [self.places objectAtIndex:indexPath.row];
+        [db addFavoritePlace:favplace];        
+        
+        [self.tableView setEditing:NO];
+    }];
+    
+    favAction.backgroundColor = [UIColor purpleColor];
+    //[UIColor colorWithPatternImage:[UIImage imageNamed:@"star-32"]];
+
+    
+    return @[favAction];
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellFocusStyleCustom) {
+        //[_objects removeObjectAtIndex:indexPath.row];
+        //[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else {
+        NSLog(@"Unhandled editing style! %d", editingStyle);
+    }
 }
 
 //- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController

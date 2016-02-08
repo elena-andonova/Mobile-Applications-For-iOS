@@ -13,6 +13,7 @@
 #import "CultureCategory.h"
 #import "Place.h"
 #import "CategoryCell.h"
+#import "LocalDatabase.h"
 
 @interface CultureCategoryTableViewController()
 
@@ -28,6 +29,10 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
+    
+    LocalDatabase *db = [LocalDatabase database];
+    
+    NSArray *testArr = [NSArray arrayWithArray:[db favoritePlaces]];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -92,6 +97,7 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.cultureCategories.count;
 }
+
 
 //-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 //    CultureCategory *categ = [self.cultureCategories objectAtIndex:indexPath.row];
